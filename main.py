@@ -3,10 +3,11 @@ from dotenv import load_dotenv
 load_dotenv()
 from os import getenv
 from json import load
-from re import findall
+from re import findall, sub, IGNORECASE
 
 TgBot = TeleBot(getenv("TOKEN"))
-btnReg = r"~btn\?\w*\?\w*\:\w*\//\w*\.\w*\/\w*"
+btnReg = r"~btn\?\w*?(.*?)\?'(.*?)'"
+subReg = r"~btn(.*)"
 
 def jsonloader(jsonFile="data.json"):
     with open(jsonFile, "r") as jsonFile:
@@ -19,14 +20,13 @@ def command_handler(msg):
     for command in jsonloader()["func"].keys():
         if (msgtxt==command):
             reply_com = jsonloader()["func"][command]
-            findList = findall(btnReg, reply_com)
+            findList = findall(btnReg, reply_com, IGNORECASE)
             if (len(findList)):
                 for btn in findList:
-                    btnData = btn.split("?")
-                    Keyboard.add(types.InlineKeyboardButton(text=btnData[1], url=btnData[2]))
-                    reply_fin = reply_com.replace("".join(findList),"")
+                    Keyboard.add(types.InlineKeyboardButton(text=btn[0], url=btn[1]))
+                    reply_com = sub(pattern=subReg, repl="", string=reply_com)
             try:
-                TgBot.send_message(msg.chat.id, reply_fin, reply_markup=Keyboard)
+                TgBot.send_message(msg.chat.id, reply_com, reply_markup=Keyboard)
             except Exception as e:
                 print(e)
 

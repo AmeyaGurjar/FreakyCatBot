@@ -2,11 +2,11 @@
     "func":{
         "start":"Hello, This Is FreakyCat's Bot.",
         "help":"Here Is The List Of Commands You Can Use:\n/start: Use This Command To Start The Bot.\n/help: Use This Command To Get A List Of All Available Commands.\n/channel: Use This Command To Get The Official Telegram Channel Of FreakyCat.\n/group: Use This Command To Get The Official Telegram Group Of FreakyCat.\n/ot: Use This Command To Get The Off-Topic Telegram Group Of FreakyCat.\n/walls: Use This Command To The Official Wallapapers Channel Of FreakyCar.\n/donate: Use This Command To Donate & Support FreakyCat.\n/owner: Use This Command To Get The Owners Of FreakyCat.\n",
-        "channel":"meow",
-        "group":"meow",
-        "ot":"meow",
-        "walls":"meow",
-        "donate":"meow",
-        "owner":"Here Are The Owners:\n~btn?AmeyaGurjar?https://t.me/OpenSourceBlackCat~btn?PrateekBhatia?https://t.me/MrFreakSins"
+        "channel":"This Is The Official FreakyCat Channel:\n~btn?Join?'https://t.me/FreakyCatDumps'",
+        "group":"This Is The Official FreakyCat Group:\n~btn?Join?'https://t.me/FreakyCatBuilds'",
+        "ot":"This Is The Off-Topic FreakyCat Group:\n~btn?Join?'https://t.me/UnderWorldShit'",
+        "walls":"This Is Official FreakyCat Wallpaper Channel:\n~btn?Join?'https://t.me/FreakyOnFire'",
+        "donate":"If You Like The Work Of Your Favourate Developer & Want To Donate For Future Updates:\n~btn?AmeyaGurjar?'https://t.me/FreakyCatDumps/45'~btn?PrateekBhatia?'https://t.me/FreakyCatDumps/42'",
+        "owner":"Here Are The Owners:\n~btn?AmeyaGurjar?'https://t.me/OpenSourceBlackCat'~btn?PrateekBhatia?'https://t.me/MrFreakSins'"
     }
 }
