@@ -1,6 +1,6 @@
 {
     "func":[
         "st_msg":"Hello, This Is FreakyCat's Bot.",
-        "help_mesg":"Here Is The List Of Commands You Can Use:\n/start: Use This Command To Start The Bot.\n/help: Use This Command To Get A List Of All Available Commands.\n/channel: Use This Command To Get The Official Telegram Channel Of FreakyCat.\n/group: Use This Command To Get The Official Telegram Group Of FreakyCat.\n/ot: Use This Command To Get The Off-Topic Telegram Group Of FreakyCat.\n/walls: Use This Command To The Official Wallapapers Channel Of FreakyCar.\n/donate: Use This Command To Donate & Support FreakyCat.\n/owner: Use This Command To Get The Owners Of FreakyCat.\n",
+        "help_msg":"Here Is The List Of Commands You Can Use:\n/start: Use This Command To Start The Bot.\n/help: Use This Command To Get A List Of All Available Commands.\n/channel: Use This Command To Get The Official Telegram Channel Of FreakyCat.\n/group: Use This Command To Get The Official Telegram Group Of FreakyCat.\n/ot: Use This Command To Get The Off-Topic Telegram Group Of FreakyCat.\n/walls: Use This Command To The Official Wallapapers Channel Of FreakyCar.\n/donate: Use This Command To Donate & Support FreakyCat.\n/owner: Use This Command To Get The Owners Of FreakyCat.\n",
     ]
 }
