@@ -1,7 +1,7 @@
 {
     "func":{
         "start":"Hello, This Is FreakyCat's Bot.\nUse /help Command To Know More About Me.",
-        "help":"Here Is The List Of Commands You Can Use:\n/start: Use This Command To Start The Bot.\n/help: Use This Command To Get A List Of All Available Commands.\n/channel: Use This Command To Get The Official Telegram Channel Of FreakyCat.\n/group: Use This Command To Get The Official Telegram Group Of FreakyCat.\n/ot: Use This Command To Get The Off-Topic Telegram Group Of FreakyCat.\n/walls: Use This Command To The Official Wallapapers Channel Of FreakyCar.\n/donate: Use This Command To Donate & Support FreakyCat.\n/owner: Use This Command To Get The Owners Of FreakyCat.\n",
+        "help":"Here Is The List Of Commands You Can Use:\n\n/start: Use This Command To Start The Bot.\n\n/help: Use This Command To Get A List Of All Available Commands.\n\n/channel: Use This Command To Get The Official Telegram Channel Of FreakyCat.\n\n/group: Use This Command To Get The Official Telegram Group Of FreakyCat.\n\n/ot: Use This Command To Get The Off-Topic Telegram Group Of FreakyCat.\n\n/walls: Use This Command To The Official Wallapapers Channel Of FreakyCar.\n\n/donate: Use This Command To Donate & Support FreakyCat.\n\n/owner: Use This Command To Get The Owners Of FreakyCat.\n\n",
         "channel":"This Is The Official FreakyCat Channel:\n~btn?Join?'https://t.me/FreakyCatDumps'",
         "group":"This Is The Official FreakyCat Group:\n~btn?Join?'https://t.me/FreakyCatBuilds'",
         "ot":"This Is The Off-Topic FreakyCat Group:\n~btn?Join?'https://t.me/UnderWorldShit'",
