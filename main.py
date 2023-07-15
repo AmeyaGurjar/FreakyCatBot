@@ -12,10 +12,11 @@ def jsonloader(jsonFile="data.json"):
 
 @TgBot.message_handler(commands=jsonloader()["func"].keys())
 def command_handler(msg):
+    msgtxt = msg.text.replace("/","")
     for command in jsonloader()["func"].keys():
-        if (msg.text==command):
+        if (msgtxt==command):
             try:
-                TgBot.send_message(msg, jsonloader()["func"][msg.text])
+                TgBot.send_message(msg, jsonloader()["func"][msgtxt])
             except Exception as e:
                 print(e)
 
