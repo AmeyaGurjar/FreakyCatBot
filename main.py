@@ -6,9 +6,9 @@ from json import load
 from re import findall, sub, IGNORECASE
 
 TgBot = TeleBot(getenv("TOKEN"))
+BotUserName = str(getenv("USER"))
 btnReg = r"~btn\?\w*?(.*?)\?'(.*?)'"
 subReg = r"~btn(.*)"
-
 def jsonloader(jsonFile="data.json"):
     with open(jsonFile, "r") as jsonFile:
         return load(jsonFile)
@@ -18,7 +18,7 @@ def command_handler(msg):
     Keyboard = types.InlineKeyboardMarkup()
     msgtxt = msg.text.replace("/","")
     for command in jsonloader()["func"].keys():
-        if (msgtxt==command):
+        if (msgtxt==command or msgtxt==f"{command}@{TgBot.get_me().username}"):
             reply_com = jsonloader()["func"][command]
             findList = findall(btnReg, reply_com, IGNORECASE)
             if (len(findList)):
