@@ -1,9 +1,14 @@
 from telebot import TeleBot, types
-from dotenv import load_config
-load_config()
+from dotenv import load_dotenv
+load_dotenv()
 from os import getenv
+from json import load
 
 TgBot = TeleBot(getenv("TOKEN"))
+
+def jsonloader(jsonFile="data.json"):
+    with open(jsonFile, "r") as jsonFile:
+        return load(jsonFile)
 
 # Start command
 @TgBot.message_handler(commands=['start'])
@@ -26,8 +31,7 @@ menu_keyboard.row("/veux", "/peux", "/walls")
 # Help command
 @TgBot.message_handler(commands=['help'])
 def send_help(message):
-    help_text = "Use the menu to navigate me!"
-    TgBot.reply_to(message, help_text, reply_markup=menu_keyboard)
+    TgBot.reply_to(message, jsonloader()["help_msg"], reply_markup=menu_keyboard)
 
 # Channel command
 @TgBot.message_handler(commands=['channel'])
