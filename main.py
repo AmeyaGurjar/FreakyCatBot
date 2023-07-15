@@ -16,7 +16,7 @@ def command_handler(msg):
     for command in jsonloader()["func"].keys():
         if (msgtxt==command):
             try:
-                TgBot.send_message(msg, jsonloader()["func"][command])
+                TgBot.send_message(msg.chat, jsonloader()["func"][command])
             except Exception as e:
                 print(e)
 
