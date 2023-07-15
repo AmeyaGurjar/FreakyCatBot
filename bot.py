@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot("YOUR_BOT_TOKEN")
+bot = telebot.TeleBot("YOUR_BOT_TOKEN_HERE")
 
 # Start command
 @bot.message_handler(commands=['start'])
@@ -30,7 +30,7 @@ def send_help(message):
 # Channel command
 @bot.message_handler(commands=['channel'])
 def send_channel(message):
-    channel_btn = types.InlineKeyboardButton("Here.", url="https://t.me/example")
+    channel_btn = types.InlineKeyboardButton("Here.", url="https://t.me/FreakyCatDumps")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "My Channel", reply_markup=markup)
@@ -40,7 +40,7 @@ def send_channel(message):
 # Group command
 @bot.message_handler(commands=['group'])
 def send_Group(message):
-    channel_btn = types.InlineKeyboardButton("Here.", url="https://t.me/example")
+    channel_btn = types.InlineKeyboardButton("Here.", url="https://t.me/FreakyCatBuilds")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "My Group", reply_markup=markup)
@@ -48,7 +48,7 @@ def send_Group(message):
 # OT Channel command
 @bot.message_handler(commands=['ot'])
 def send_ot(message):
-    channel_btn = types.InlineKeyboardButton("Group", url="https://t.me/example")
+    channel_btn = types.InlineKeyboardButton("Group", url="https://t.me/UnderWorldShit")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "OFF-Topic", reply_markup=markup)
@@ -57,7 +57,7 @@ def send_ot(message):
 # Donate command
 @bot.message_handler(commands=['donate'])
 def send_donate(message):
-    channel_btn = types.InlineKeyboardButton("Donate", url="https://t.me/example")
+    channel_btn = types.InlineKeyboardButton("Donate", url="https://t.me/FreakyCatDumps/42")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "If You Like My Work:)", reply_markup=markup)
@@ -65,7 +65,7 @@ def send_donate(message):
 # Owner command
 @bot.message_handler(commands=['owner'])
 def send_owner(message):
-    channel_btn = types.InlineKeyboardButton("Profile", url="https:/example")
+    channel_btn = types.InlineKeyboardButton("Profile", url="https://t.me/MrFreakSins")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "My Master", reply_markup=markup)
@@ -73,7 +73,7 @@ def send_owner(message):
 # Walls command
 @bot.message_handler(commands=['walls'])
 def send_walls(message):
-    channel_btn = types.InlineKeyboardButton("Here.", url="https://example")
+    channel_btn = types.InlineKeyboardButton("Here.", url="https://t.me/FreakyOnFire")
     markup = types.InlineKeyboardMarkup()
     markup.add(channel_btn)
     bot.reply_to(message, "Best Wallpapers", reply_markup=markup)
@@ -92,9 +92,43 @@ def send_links(message):
 
     bot.reply_to(message, "Veux|Peux", reply_markup=markup)
 
-# Default handler
-@bot.message_handler(func=lambda message: True)
+# Default handler only responds to commands
+@bot.message_handler(func=lambda message: message.text.startswith("/"))
 def default_command(message):
     bot.reply_to(message, "Choose an option:", reply_markup=menu_keyboard)
+
+# Ignore all other messages
+@bot.message_handler(func=lambda message: True)
+def ignore_other(message):
+    pass
+
+# Log channel
+log_channel_id = 1226959801
+
+# Existing handlers...
+
+@bot.message_handler(func=lambda msg: True)
+def log_and_process(msg):
+
+  # Extract info
+  chat_id = msg.chat.id
+  date = msg.date
+  username = msg.from_user.username
+
+  # Log message
+  log_text = f"From: {chat_id}\nUsername: @{username}\nDate: {date}\n{msg.text}"
+  bot.send_message(log_channel_id, log_text)
+
+  # Process message
+  default_command(msg)
+
+# Error handling
+def send_log(text):
+  try:
+    bot.send_message(log_channel_id, text)
+  except Exception as e:
+    print('Error sending log:', e)
+
+# Rest of handlers...
 
 bot.polling()
