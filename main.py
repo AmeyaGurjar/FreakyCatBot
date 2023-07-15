@@ -10,6 +10,17 @@ def jsonloader(jsonFile="data.json"):
     with open(jsonFile, "r") as jsonFile:
         return load(jsonFile)
 
+@TgBot.message_handler(commands=jsonloader()["commands"])
+def command_handler(msg):
+    for command in jsonloader()["commands"]:
+        if (msg.text==command):
+            try:
+                TgBot.send_message(msg, jsonloader()["func"][msg.text])
+            except Exception as e:
+                print(e)
+
+
+
 # Start command
 @TgBot.message_handler(commands=['start'])
 def send_start(message):
@@ -137,4 +148,4 @@ def send_log(text):
 
 # Rest of handlers...
 
-TgBot.infinite_polling()
+TgBot.infinity_polling()
