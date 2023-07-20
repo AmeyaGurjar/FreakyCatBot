@@ -30,4 +30,4 @@ def command_handler(msg):
             except Exception as e:
                 print(e)
 
-TgBot.infinity_polling()
+TgBot.polling()
